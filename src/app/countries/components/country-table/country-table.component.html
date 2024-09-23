@@ -1,0 +1,32 @@
+<div *ngIf="countriesArrayToRender.length === 0; else table" class="alert alert-warning  warning text-center">
+    There isn't any country to render
+</div>
+
+<ng-template #table>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Flag</th>
+                <th>Country</th>
+                <th>Capital</th>
+                <th>Population</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let country of countriesArrayToRender; let i = index">
+                <td>{{i+1}}</td>
+                <td>
+                    <img [src]="country.flags.svg" [alt]="country.name.common">
+                </td>
+                <td>{{country.name.common}}</td>
+                <td>{{country.capital}}</td>
+                <td>{{country.population | number}}</td>
+                <td>
+                    <a href="#">Ver más</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</ng-template>

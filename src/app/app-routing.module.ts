@@ -1,7 +1,34 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AboutPageComponent } from './shared/pages/about-page/about-page.component';
+import { ContactPageComponent } from './shared/pages/contact-page/contact-page.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+/*   {
+    path: '',
+    component: HomePageComponent
+  }, */
+  {
+    path: 'about',
+    component: AboutPageComponent
+  },
+  {
+    path: 'contact',
+    component: ContactPageComponent
+  },
+  {
+    path: 'countries',
+    // component: ContactPageComponent (If we load a component in the route we aren't applying lazy load)
+    // import is a promise
+    //countries.module has been already imported the countries-routing.module
+    loadChildren:() => import('./countries/countries.module').then(modulo => modulo.CountriesModule) 
+    
+    },
+  {
+    path: '**',
+    redirectTo: 'countries'
+  }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

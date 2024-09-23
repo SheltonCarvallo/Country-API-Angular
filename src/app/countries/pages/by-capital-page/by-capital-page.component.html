@@ -1,0 +1,17 @@
+<h2>By Capital</h2>
+<hr>
+<div class="row">
+    <div class="col">
+      <app-shared-search-box [placeHolderC]="placeHolderFromCapitalComponent"
+                             (searchName)="searchByCapital($event)"  
+                                
+      ></app-shared-search-box>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <hr>
+            <app-countries-country-table [countriesArrayToRender]="countriesArray"></app-countries-country-table>
+    </div>
+
+</div>
