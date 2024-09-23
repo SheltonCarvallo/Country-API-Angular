@@ -11,7 +11,7 @@ export class ByCapitalPageComponent {
 
   public countriesArray: CountryInterface[] = [];
 
-  constructor(private countriesService: CountriesService) { }
+  constructor(private countriesService: CountriesService) { } //DI
 
   public placeHolderFromCapitalComponent: string = "Enter the capital name";
 
@@ -24,3 +24,4 @@ export class ByCapitalPageComponent {
     )
   }
 }
+ 
