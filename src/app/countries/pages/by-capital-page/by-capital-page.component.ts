@@ -19,7 +19,7 @@ export class ByCapitalPageComponent {
     this.countriesService.searchCapital(capitalSearch)
     .subscribe(
       countries => {
-        this.countriesArray = countries;
+        this.countriesArray = countries; 
       }
     )
   }

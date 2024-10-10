@@ -2,12 +2,14 @@
 <hr>
 <div class="row">
     <div class="col">
-      <app-shared-search-box [placeHolderC]="placeHolderFromRegionComponent"></app-shared-search-box>
+        <app-shared-search-box [placeHolderC]="placeHolderFromRegionComponent"
+            (searchName)="lookByRegion($event)"></app-shared-search-box>
     </div>
 </div>
 <div class="row">
     <div class="col">
-        Result Table
+        <hr>
+        <app-countries-region-table [countriesToRenderArray]="countriesArray"></app-countries-region-table>
     </div>
 
 </div>

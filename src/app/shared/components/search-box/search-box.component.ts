@@ -8,10 +8,10 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 export class SearchBoxComponent {
 
   @Input()
-  public placeHolderC: string = '';
+  public placeHolderC: string = ''; //It recieves info fomr its paremt
 
   @Output()
-  public searchName: EventEmitter<string> = new EventEmitter();
+  public searchName: EventEmitter<string> = new EventEmitter(); // it sends info to the parent
 
   capitalName(nameEntered: string): void {
     this.searchName.emit(nameEntered)
