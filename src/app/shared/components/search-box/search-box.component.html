@@ -1,7 +1,9 @@
+<!-- (keyup.enter)="capitalName(txtSearchInput.value)" -->
 <input type="text" 
-[placeholder]="placeHolderC" 
-(keyup.enter)="capitalName(txtSearchInput.value)"
+[placeholder]="placeHolderC"
+[value]="charactersLastSearch" 
 class="form-control"
+(keyup)="onKeyPress(txtSearchInput.value)"
 #txtSearchInput>
 <!-- The expression #txtSearchInput is a feature of Angular. it is called a template reference variable in Angular.-->
 <!-- It allows you to create a reference to a DOM element (like an <input> in this case) within the Angular template.  -->

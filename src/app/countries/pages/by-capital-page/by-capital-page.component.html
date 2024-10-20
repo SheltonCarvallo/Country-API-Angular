@@ -2,14 +2,16 @@
 <hr>
 <div class="row">
     <div class="col">
-      <app-shared-search-box [placeHolderC]="placeHolderFromCapitalComponent"
-                             (searchName)="searchByCapital($event)"></app-shared-search-box>
+        <app-shared-search-box [placeHolderC]="placeHolderFromCapitalComponent" [charactersLastSearch]="characters"
+            (searchName)="searchByCapital($event)" (onDebounce)="searchByCapital($event)">
+        </app-shared-search-box>
     </div>
 </div>
 <div class="row">
     <div class="col">
         <hr>
-            <app-countries-country-table [countriesArrayToRender]="countriesArray"></app-countries-country-table>
+        <app-shared-loading-spinner *ngIf="isloading"></app-shared-loading-spinner>
+        <app-countries-country-table [countriesArrayToRender]="countriesArray"></app-countries-country-table>
     </div>
 
-</div>  
+</div>

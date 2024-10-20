@@ -1,14 +1,17 @@
 <h2>By Region</h2>
 <hr>
 <div class="row">
-    <div class="col">
-        <app-shared-search-box [placeHolderC]="placeHolderFromRegionComponent"
-            (searchName)="lookByRegion($event)"></app-shared-search-box>
+    <div class="col text-center">
+        <button *ngFor="let region of regions" class="btn mx-2" (click)="lookByRegion(region)"
+            [ngClass]="{'btn-outline-primary': selectedRegion === region}">
+            {{region}}
+        </button>
     </div>
 </div>
 <div class="row">
     <div class="col">
         <hr>
+        <app-shared-loading-spinner *ngIf="isLoading"></app-shared-loading-spinner>
         <app-countries-region-table [countriesToRenderArray]="countriesArray"></app-countries-region-table>
     </div>
 
